@@ -1,0 +1,151 @@
+Last session, we covered the following:
+  
+
+  ... Write a function that takes in an array of number and returns the average of the numbers. The return type should be number. (also make sure items are converted to number first)
+
+   ... Write a function that takes in an array and returns the maximum and minimum value. The return type should be maximum_minimum. For example, [100,2,1,3,4,5] should return 100_1 . Try to do this in one loop.
+
+   ... Write a function that takes in an array and removes duplicates if any.
+      For example, [1,2,3,3,4,5,6,7,7,7] should return [1,2,3,4,5,6,7]
+            [1,2,3,4] should return [1,2,3,4]
+
+   
+Review these algorithms briefly. Make sure we understand.
+
+Today we cover benefits of using functions:
+
+1. Functions can be reused.
+
+2. It can be defined once, and used many times
+
+3. Functions keep separate scope for variables. So they don't interfere with global variables. For example, if you have x,y,z somewhere in a javascript file as global, and you still need to use it, function will have separate scope/value.
+
+4. Functions can be modified or implemented differently later on, without changing it in all places. Also it can hide away complexity. For example you might have a function called calculateDistance(latitude, longitude). And that function can have very complex formula.
+
+5. Functions can be centralized/modularized in separate classes/or modules, that can be even used in multiple projects.
+
+DRY -> Dont Repeat Yourself. It's a important concept for large scale project.
+
+**** Question. If we have a large project we are working on, and different teams working on different sections of the pages. How can we make sure the common functionalities are implemented in same file? If everyone doing their own thing in own project, there will be redundancy! And inefficiency!
+
+
+An example of global and local scope
+
+let myAmt=1000;
+
+function deposit(amt){
+    myAmt+=amt;
+}
+function withdraw(amt){
+    myAmt-=amt;
+}
+function giveDiscount(){
+    let myAmt=500; //can we do this?
+    myAmt +=200; //would it modify the global myAmt?
+}
+
+
+Different ways to write functions
+
+1st way: declaration
+
+function myFunc(param){
+    return something;
+}
+myFunc(5);
+
+2nd way: named function/expression
+
+let myFunc=function(param){
+    return param+5;
+}
+let myFunc2=myFunc;
+myFunc2(5); //examine what we get from myFunc2
+
+myFunc2=function(param1,param2){
+    return param1+param2+5;
+}
+myFunc2(5,6);
+
+3rd way: es6
+
+const myFunc=(param)=>param+5;
+more example:
+
+let arr=[1,2,3,4,5];
+//classic way
+arr.map(
+   function(e,i,arr){
+       return e+5;
+   }
+);
+
+//shorter es6 version
+arr.map((e,i,arr)=>e+5); //one line!
+
+*** Lets cover array's reduce function.
+
+
+Let's do some Math related Problems/Algorithms.
+
+Lets warm up with a simple algorithm:
+
+* Swap two items in a array. Array, index1 and index2 will be provided
+
+function swapItem(arr,index1,index2){
+
+}
+
+* Write a function that will take in as principal(in number), interest rate, and terms(in number of years), and it will return the final amount(after adding all the interests).
+
+* Write a function that will return a random number between the range you provide. 
+
+function giveMeRandom(min,max){
+    
+}
+
+1. We have x coordinate value and y coordinate values in of a point in webpage(or axis). we want to know the distance from (0,0) point. Write a function that calcuate this.
+//Lets draw a little visual
+
+function calculateDistance(x,y){
+   //we need to know the pythegorem theory
+   //the hypetenuse of a right triangle is the square root of sum of the square of base and height x^2+y^2=z^2(here z is hypetenuse)
+   return Math.sqrt(Math.pow(x,2)+Math.pow(y,2));
+}
+
+Lets mess with Circle formula a little bit.
+
+2. We just know the radius of a circle. We want to know the area it will cover. We also want to know the total perimeter(how long will the be the circle if a cirular string was strethed)
+
+Circle formula: 
+
+Perimeter/Circumference =2 * pi * r (pi is constant, r is radius)
+Area of circle= pi * r ^2;
+
+Write functions for both
+
+function calculatePerimeter(r){
+    return 2 * Math.PI * r;
+}
+
+function calculateArea(r){
+    return Math.PI * Math.pow(r,2);
+}
+
+////Wanna go crazy? Experiment with trigonometry formulas: Sine, Cosine etc. They gives you the path of circular motion etc...
+
+
+
+   
+*** Demo the try catch exception in javascript
+
+If time remaining, get started on XMLHttpRequest()
+
+
+
+
+
+
+
+
+
